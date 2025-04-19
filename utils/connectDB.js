@@ -8,3 +8,5 @@ const connectDB = async () => {
     console.log("MongoDB connection error: ", error);
   }
 };
+
+export default connectDB;

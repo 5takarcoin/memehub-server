@@ -4,6 +4,7 @@ import userRouter from "./routes/user.route.js";
 import pinRouter from "./routes/pin.route.js";
 import commentRouter from "./routes/comment.route.js";
 import boardRouter from "./routes/board.route.js";
+import connectDB from "./utils/connectDB.js";
 
 const app = express();
 app.use(express.json());
@@ -14,5 +15,6 @@ app.use("/api/comments", commentRouter);
 app.use("/api/boards", boardRouter);
 
 app.listen(process.env.PORT || 3000, () => {
+  connectDB();
   console.log("Server is running");
 });
